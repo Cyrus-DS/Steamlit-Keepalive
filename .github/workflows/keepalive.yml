@@ -12,4 +12,7 @@ jobs:
     steps:
       - name: Ping Streamlit App
         run: |
-          curl -L --silent --show-error --fail "https://ndundu-finance-appgit-5xrzkytijl5kizazc5uxav.streamlit.app/" > /dev/null
+          APP_URL="https://ndundu-finance-appgit-5xrzkytijl5kizazc5uxav.streamlit.app/#generate-statements"
+          echo "Pinging: $APP_URL"
+          curl -L -I -sS "$APP_URL"
+          curl -L -sS -o /dev/null -w "HTTP %{http_code}\n" "$APP_URL"
