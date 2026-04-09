@@ -1,15 +1,15 @@
 name: Keep Streamlit Awake
 
 on:
-  schedule:
-    - cron: "17 */6 * * *"
   workflow_dispatch:
+  schedule:
+    - cron: '17 */6 * * *'
 
 jobs:
   ping:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Ping Streamlit App
+      - name: Ping Streamlit health endpoint
         run: |
-          curl -L --silent --show-error --fail "https://ndundu-finance-appgit-5xrzkytijl5kizazc5uxav.streamlit.app" > /dev/null
+          curl -sS -o /dev/null -w "HTTP %{http_code}\n" "https://ndundu-finance-appgit-5xrzkytijl5kizazc5uxav.streamlit.app/_stcore/health"
