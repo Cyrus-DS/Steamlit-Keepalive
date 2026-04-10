@@ -1,6 +1,6 @@
 ## Keeping the Finance App Awake
 
-This finance application is built using Streamlit and hosted on Streamlit Community Cloud.
+This finance application (https://ndundu-finance-appgit-5xrzkytijl5kizazc5uxav.streamlit.app/#generate-statements) is built using Streamlit and hosted on Streamlit Community Cloud.
 
 To ensure a smooth experience for members recording and viewing transactions, a scheduled workflow via GitHub Actions is used to prevent the app from going idle.
 
